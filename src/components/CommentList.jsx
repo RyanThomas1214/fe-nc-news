@@ -30,7 +30,13 @@ class CommentList extends Component {
     return (
       <main>
         {comments.map(comment => {
-          return <CommentCard key={comment.comment_id} {...comment} />;
+          return (
+            <CommentCard
+              key={comment.comment_id}
+              {...comment}
+              username={this.props.username}
+            />
+          );
         })}
       </main>
     );

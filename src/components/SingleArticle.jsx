@@ -65,6 +65,7 @@ class SingleArticle extends Component {
         </form>
         <Router>
           <CommentList
+            username={this.props.username}
             path="comments"
             successfulPost={this.state.successfulPost}
           />

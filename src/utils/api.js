@@ -49,3 +49,9 @@ exports.postComment = (comment, article_id) => {
       return data.comment;
     });
 };
+
+exports.removeComment = comment_id => {
+  return axios.delete(
+    `https://ryans-nc-news.herokuapp.com/api/comments/${comment_id}`
+  );
+};

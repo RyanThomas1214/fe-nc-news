@@ -1,6 +1,11 @@
 import React from "react";
+import * as api from "../utils/api";
 
-const CommentCard = ({ votes, created_at, author, body }) => {
+const CommentCard = ({ votes, author, body, comment_id, username }) => {
+  const handleClick = event => {
+    api.removeComment(comment_id);
+  };
+
   return (
     <article>
       <h4>{author}</h4>
@@ -9,6 +14,7 @@ const CommentCard = ({ votes, created_at, author, body }) => {
         Votes: {votes} <button>Upvote</button>
         <button>Downvote</button>
       </p>
+      {username === author && <button onClick={handleClick}>Delete</button>}
       <br />
     </article>
   );
