@@ -14,7 +14,7 @@ function App() {
         <Homepage path="/" />
         <ArticleList path="/articles" />
         <ArticleList path="/articles/:slug" />
-        <SingleArticle path="/article/:article_id" />
+        <SingleArticle path="/article/:article_id/*" />
       </Router>
     </div>
   );

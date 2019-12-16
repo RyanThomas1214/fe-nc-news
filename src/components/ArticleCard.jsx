@@ -19,6 +19,7 @@ const ArticleCard = ({
       <p>User: {author}</p>
       <p>Votes: {votes}</p>
       <p>Comments: {comment_count}</p>
+
       <br />
     </article>
   );

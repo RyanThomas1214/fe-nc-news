@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
 import Loader from "./Loader";
+import CommentList from "./CommentList";
+import { Link, Router } from "@reach/router";
 
 class SingleArticle extends Component {
   state = {
@@ -29,7 +31,12 @@ class SingleArticle extends Component {
           Votes: {article.votes} <button>Upvote</button>
           <button>Downvote</button>
         </p>
-        <p> Comments: {article.comment_count}</p>
+        <Link to={`/article/${article.article_id}/comments`}>
+          <p> Comments: {article.comment_count}</p>
+        </Link>
+        <Router>
+          <CommentList path="comments" />
+        </Router>
       </main>
     );
   }

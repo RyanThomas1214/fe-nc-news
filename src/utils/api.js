@@ -1,9 +1,12 @@
 const axios = require("axios");
 
-exports.fetchAllArticles = topic => {
+exports.fetchAllArticles = (topic, sort_by) => {
   return axios
     .get(`https://ryans-nc-news.herokuapp.com/api/articles`, {
-      params: { topic }
+      params: {
+        topic,
+        sort_by
+      }
     })
     .then(({ data }) => {
       return data.articles;
@@ -23,5 +26,15 @@ exports.fetchSingleArticle = article_id => {
     .get(`https://ryans-nc-news.herokuapp.com/api/articles/${article_id}`)
     .then(({ data }) => {
       return data.article;
+    });
+};
+
+exports.fetchAllComments = article_id => {
+  return axios
+    .get(
+      `https://ryans-nc-news.herokuapp.com/api/articles/${article_id}/comments`
+    )
+    .then(({ data }) => {
+      return data.comments;
     });
 };
