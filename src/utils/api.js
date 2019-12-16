@@ -17,3 +17,11 @@ exports.fetchAllTopics = () => {
       return data.topics;
     });
 };
+
+exports.fetchSingleArticle = article_id => {
+  return axios
+    .get(`https://ryans-nc-news.herokuapp.com/api/articles/${article_id}`)
+    .then(({ data }) => {
+      return data.article;
+    });
+};

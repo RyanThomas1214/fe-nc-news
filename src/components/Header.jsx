@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <div>
       <Link to="/">
-        <h3>Some form of logo</h3>
+        <h3>Some form of logo/Back to all articles</h3>
       </Link>
 
       <h1>Welcome to NC-News</h1>
