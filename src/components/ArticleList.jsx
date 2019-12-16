@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 import Loader from "./Loader";
 import * as api from "../utils/api";
+import ViewToggler from "./ViewToggler";
 
 class ArticleList extends Component {
   state = {
@@ -48,10 +49,11 @@ class ArticleList extends Component {
           </select>
           <button>SORT!</button>
         </form>
-
-        {articles.map(article => {
-          return <ArticleCard key={article.article_id} {...article} />;
-        })}
+        <ViewToggler>
+          {articles.map(article => {
+            return <ArticleCard key={article.article_id} {...article} />;
+          })}
+        </ViewToggler>
       </main>
     );
   }
