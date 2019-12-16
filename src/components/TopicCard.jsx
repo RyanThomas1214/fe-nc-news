@@ -1,7 +1,12 @@
 import React from "react";
 
-const TopicCard = () => {
-  return <div>TOPIC CARD</div>;
+const TopicCard = ({ slug, description }) => {
+  return (
+    <main>
+      <h2>{slug}</h2>
+      <p>{description}</p>
+    </main>
+  );
 };
 
 export default TopicCard;
