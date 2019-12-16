@@ -4,9 +4,7 @@ import { Link } from "@reach/router";
 const Homepage = () => {
   return (
     <main>
-      <Link to="/articles">
-        <button>Articles</button>
-      </Link>
+      <Link to="/articles">Articles</Link>
     </main>
   );
 };
