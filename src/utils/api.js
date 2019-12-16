@@ -38,3 +38,14 @@ exports.fetchAllComments = article_id => {
       return data.comments;
     });
 };
+
+exports.postComment = (comment, article_id) => {
+  return axios
+    .post(
+      `https://ryans-nc-news.herokuapp.com/api/articles/${article_id}/comments`,
+      comment
+    )
+    .then(({ data }) => {
+      return data.comment;
+    });
+};

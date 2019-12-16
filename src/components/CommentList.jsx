@@ -13,6 +13,11 @@ class CommentList extends Component {
     this.getAllComments();
   }
 
+  componentDidUpdate(prevProps) {
+    if (this.props.successfulPost !== prevProps.successfulPost)
+      this.getAllComments();
+  }
+
   getAllComments = () => {
     api.fetchAllComments(this.props.article_id).then(comments => {
       this.setState({ comments, isLoading: false });
