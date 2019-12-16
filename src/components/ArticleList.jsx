@@ -9,12 +9,16 @@ class ArticleList extends Component {
     isLoading: true
   };
 
+  componentDidUpdate(prevProps) {
+    if (this.props.slug !== prevProps.slug) this.getAllArticles();
+  }
+
   componentDidMount() {
     this.getAllArticles();
   }
 
   getAllArticles = () => {
-    api.fetchAllArticles().then(articles => {
+    api.fetchAllArticles(this.props.slug).then(articles => {
       this.setState({ articles, isLoading: false });
     });
   };

@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "@reach/router";
+import TopicList from "./TopicList";
 
 const Header = () => {
   return (
@@ -9,6 +10,7 @@ const Header = () => {
       </Link>
 
       <h1>Welcome to NC-News</h1>
+      <TopicList />
     </div>
   );
 };

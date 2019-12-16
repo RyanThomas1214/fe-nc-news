@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import TopicCard from "./TopicCard";
 import * as api from "../utils/api";
+import { Link } from "@reach/router";
 import Loader from "./Loader";
 
 class TopicList extends Component {
@@ -24,7 +24,11 @@ class TopicList extends Component {
     return (
       <main>
         {topics.map(topic => {
-          return <TopicCard key={topic.slug} {...topic} />;
+          return (
+            <Link to={`/articles/${topic.slug}`} key={topic.slug}>
+              <button>{topic.slug}</button>
+            </Link>
+          );
         })}
       </main>
     );

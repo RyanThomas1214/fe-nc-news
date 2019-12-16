@@ -1,8 +1,10 @@
 const axios = require("axios");
 
-exports.fetchAllArticles = () => {
+exports.fetchAllArticles = topic => {
   return axios
-    .get(`https://ryans-nc-news.herokuapp.com/api/articles`)
+    .get(`https://ryans-nc-news.herokuapp.com/api/articles`, {
+      params: { topic }
+    })
     .then(({ data }) => {
       return data.articles;
     });

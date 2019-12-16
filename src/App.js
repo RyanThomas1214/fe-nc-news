@@ -4,7 +4,6 @@ import { Router } from "@reach/router";
 import Homepage from "./components/Homepage";
 import "./App.css";
 import ArticleList from "./components/ArticleList";
-import TopicList from "./components/TopicList";
 
 function App() {
   return (
@@ -13,7 +12,7 @@ function App() {
       <Router>
         <Homepage path="/" />
         <ArticleList path="/articles" />
-        <TopicList path="/topics" />
+        <ArticleList path="/articles/:slug" />
       </Router>
     </div>
   );
