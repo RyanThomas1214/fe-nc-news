@@ -25,7 +25,10 @@ class SingleArticle extends Component {
         <h2>{article.title}</h2>
         <h3>Written by: {article.author}</h3>
         <h5>{article.body}</h5>
-        <p>Votes: {article.votes}</p>
+        <p>
+          Votes: {article.votes} <button>Upvote</button>
+          <button>Downvote</button>
+        </p>
         <p> Comments: {article.comment_count}</p>
       </main>
     );
