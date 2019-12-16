@@ -1,7 +1,14 @@
 import React from "react";
+import { Link } from "@reach/router";
 
 const Homepage = () => {
-  return <div>HOMEPAGE</div>;
+  return (
+    <main>
+      <Link to="/articles">
+        <button>Articles</button>
+      </Link>
+    </main>
+  );
 };
 
 export default Homepage;
