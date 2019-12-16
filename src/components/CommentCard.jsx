@@ -1,9 +1,15 @@
 import React from "react";
-import * as api from "../utils/api";
 
-const CommentCard = ({ votes, author, body, comment_id, username }) => {
+const CommentCard = ({
+  votes,
+  author,
+  body,
+  username,
+  comment_id,
+  deleteComment
+}) => {
   const handleClick = event => {
-    api.removeComment(comment_id);
+    deleteComment(comment_id);
   };
 
   return (

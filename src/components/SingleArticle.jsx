@@ -9,7 +9,7 @@ class SingleArticle extends Component {
     article: {},
     comment: { username: "", body: "" },
     isLoading: true,
-    successfulPost: false
+    successfulPost: {}
   };
 
   componentDidMount() {
@@ -24,9 +24,9 @@ class SingleArticle extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    api.postComment(this.state.comment, this.props.article_id).then(() => {
+    api.postComment(this.state.comment, this.props.article_id).then(comment => {
       this.setState({
-        successfulPost: true,
+        successfulPost: comment,
         comment: { username: "", body: "" }
       });
     });
