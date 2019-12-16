@@ -54,11 +54,12 @@ class SingleArticle extends Component {
           <p> Comments: {article.comment_count}</p>
         </Link>
         <form onSubmit={this.handleSubmit}>
-          Comment:{" "}
+          Comment:
           <input
             type="text"
             value={this.state.comment.body}
             onChange={this.handleChange}
+            required
           />
           <button>Post Comment</button>
         </form>
