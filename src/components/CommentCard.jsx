@@ -1,4 +1,5 @@
 import React from "react";
+import Voter from "./Voter";
 
 const CommentCard = ({
   votes,
@@ -16,10 +17,7 @@ const CommentCard = ({
     <article>
       <h4>{author}</h4>
       <p>{body}</p>
-      <p>
-        Votes: {votes} <button>Upvote</button>
-        <button>Downvote</button>
-      </p>
+      <Voter votes={votes} />
       {username === author && <button onClick={handleClick}>Delete</button>}
       <br />
     </article>

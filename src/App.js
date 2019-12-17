@@ -5,6 +5,7 @@ import Homepage from "./components/Homepage";
 import "./App.css";
 import ArticleList from "./components/ArticleList";
 import SingleArticle from "./components/SingleArticle";
+import ErrDisplayer from "./components/ErrDisplayer";
 
 class App extends Component {
   state = {
@@ -22,6 +23,7 @@ class App extends Component {
             path="/article/:article_id/*"
             username={this.state.username}
           />
+          <ErrDisplayer default />
         </Router>
       </div>
     );
