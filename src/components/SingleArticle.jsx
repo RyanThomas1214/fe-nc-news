@@ -12,7 +12,8 @@ class SingleArticle extends Component {
     comment: { username: "", body: "" },
     isLoading: true,
     successfulPost: {},
-    err: ""
+    err: "",
+    isClicked: false
   };
 
   componentDidMount() {
@@ -32,12 +33,14 @@ class SingleArticle extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+    this.setState({ isClicked: true });
     api
       .postComment(this.state.comment, this.props.article_id)
       .then(comment => {
         this.setState({
           successfulPost: comment,
-          comment: { username: "", body: "" }
+          comment: { username: "", body: "" },
+          isClicked: false
         });
       })
       .catch(err => {
@@ -52,7 +55,7 @@ class SingleArticle extends Component {
   };
 
   render() {
-    const { article, isLoading, err } = this.state;
+    const { article, isLoading, err, isClicked } = this.state;
     if (err) return <ErrDisplayer err={err} />;
     if (isLoading) return <Loader />;
 
@@ -78,7 +81,7 @@ class SingleArticle extends Component {
             onChange={this.handleChange}
             required
           />
-          <button>Post Comment</button>
+          <button disabled={isClicked}>Post Comment</button>
         </form>
         <Router>
           <CommentList
