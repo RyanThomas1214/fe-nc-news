@@ -17,7 +17,7 @@ const CommentCard = ({
     <article>
       <h4>{author}</h4>
       <p>{body}</p>
-      <Voter votes={votes} />
+      <Voter votes={votes} section="comments" section_id={comment_id} />
       {username === author && <button onClick={handleClick}>Delete</button>}
       <br />
     </article>

@@ -47,7 +47,11 @@ class SingleArticle extends Component {
         <h2>{article.title}</h2>
         <h3>Written by: {article.author}</h3>
         <h5>{article.body}</h5>
-        <Voter votes={article.votes} />
+        <Voter
+          section="articles"
+          section_id={article.article_id}
+          votes={article.votes}
+        />
 
         <Link to={`/article/${article.article_id}/comments`}>
           <p> Comments: {article.comment_count}</p>

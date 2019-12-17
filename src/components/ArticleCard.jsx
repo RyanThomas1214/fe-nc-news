@@ -18,7 +18,7 @@ const ArticleCard = ({
 
       <p>Topic: {topic}</p>
       <p>User: {author}</p>
-      <Voter votes={votes} />
+      <Voter votes={votes} section="articles" section_id={article_id} />
       <p>Comments: {comment_count}</p>
 
       <br />
