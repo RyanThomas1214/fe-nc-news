@@ -3,7 +3,6 @@ import * as api from "../utils/api";
 import Loader from "./Loader";
 import CommentList from "./CommentList";
 import { Link, Router } from "@reach/router";
-import ViewToggler from "./ViewToggler";
 
 class SingleArticle extends Component {
   state = {
