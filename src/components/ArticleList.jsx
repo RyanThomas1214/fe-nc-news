@@ -1,13 +1,15 @@
 import React, { Component } from "react";
 import ArticleCard from "./ArticleCard";
 import Loader from "./Loader";
+import ErrDisplayer from "./ErrDisplayer";
 import * as api from "../utils/api";
 
 class ArticleList extends Component {
   state = {
     articles: [],
     isLoading: true,
-    sort_by: "created_at"
+    sort_by: "created_at",
+    err: ""
   };
 
   componentDidUpdate(prevProps) {
@@ -19,9 +21,14 @@ class ArticleList extends Component {
   }
 
   getAllArticles = () => {
-    api.fetchAllArticles(this.props.slug).then(articles => {
-      this.setState({ articles, isLoading: false });
-    });
+    api
+      .fetchAllArticles(this.props.slug)
+      .then(articles => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err: err.response.data.msg });
+      });
   };
 
   handleChange = event => {
@@ -30,14 +37,21 @@ class ArticleList extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    api.fetchAllArticles(null, this.state.sort_by).then(articles => {
-      this.setState({ articles, isLoading: false });
-    });
+    api
+      .fetchAllArticles(null, this.state.sort_by)
+      .then(articles => {
+        this.setState({ articles, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err: err.response.data.msg });
+      });
   };
 
   render() {
-    const { articles, isLoading } = this.state;
+    const { articles, isLoading, err } = this.state;
+    if (err) return <ErrDisplayer err={err} />;
     if (isLoading) return <Loader />;
+
     return (
       <main>
         <form onSubmit={this.handleSubmit}>

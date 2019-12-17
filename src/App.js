@@ -23,7 +23,7 @@ class App extends Component {
             path="/article/:article_id/*"
             username={this.state.username}
           />
-          <ErrDisplayer default />
+          <ErrDisplayer default err="Path Not found" />
         </Router>
       </div>
     );

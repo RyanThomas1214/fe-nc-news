@@ -1,7 +1,7 @@
 import React from "react";
 
-const ErrDisplayer = () => {
-  return <div>ERROR!</div>;
+const ErrDisplayer = ({ err }) => {
+  return <div>{err}</div>;
 };
 
 export default ErrDisplayer;

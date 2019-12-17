@@ -4,13 +4,15 @@ import Loader from "./Loader";
 import CommentList from "./CommentList";
 import { Link, Router } from "@reach/router";
 import Voter from "./Voter";
+import ErrDisplayer from "./ErrDisplayer";
 
 class SingleArticle extends Component {
   state = {
     article: {},
     comment: { username: "", body: "" },
     isLoading: true,
-    successfulPost: {}
+    successfulPost: {},
+    err: ""
   };
 
   componentDidMount() {
@@ -18,19 +20,29 @@ class SingleArticle extends Component {
   }
 
   getSingleArticle = () => {
-    api.fetchSingleArticle(this.props.article_id).then(article => {
-      this.setState({ article, isLoading: false });
-    });
+    api
+      .fetchSingleArticle(this.props.article_id)
+      .then(article => {
+        this.setState({ article, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err: err.response.data.msg });
+      });
   };
 
   handleSubmit = event => {
     event.preventDefault();
-    api.postComment(this.state.comment, this.props.article_id).then(comment => {
-      this.setState({
-        successfulPost: comment,
-        comment: { username: "", body: "" }
+    api
+      .postComment(this.state.comment, this.props.article_id)
+      .then(comment => {
+        this.setState({
+          successfulPost: comment,
+          comment: { username: "", body: "" }
+        });
+      })
+      .catch(err => {
+        this.setState({ err: err.response.data.msg });
       });
-    });
   };
 
   handleChange = event => {
@@ -40,8 +52,10 @@ class SingleArticle extends Component {
   };
 
   render() {
-    const { article, isLoading } = this.state;
+    const { article, isLoading, err } = this.state;
+    if (err) return <ErrDisplayer err={err} />;
     if (isLoading) return <Loader />;
+
     return (
       <main>
         <h2>{article.title}</h2>

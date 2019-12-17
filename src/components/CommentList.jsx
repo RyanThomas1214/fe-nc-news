@@ -2,12 +2,14 @@ import React, { Component } from "react";
 import * as api from "../utils/api";
 import Loader from "./Loader";
 import CommentCard from "./CommentCard";
+import ErrDisplayer from "./ErrDisplayer";
 
 class CommentList extends Component {
   state = {
     comments: [],
     isLoading: true,
-    successfulDeleteCount: 0
+    successfulDeleteCount: 0,
+    err: ""
   };
 
   componentDidMount() {
@@ -24,22 +26,34 @@ class CommentList extends Component {
   }
 
   getAllComments = () => {
-    api.fetchAllComments(this.props.article_id).then(comments => {
-      this.setState({ comments, isLoading: false });
-    });
+    api
+      .fetchAllComments(this.props.article_id)
+      .then(comments => {
+        this.setState({ comments, isLoading: false });
+      })
+      .catch(err => {
+        this.setState({ err: err.response.data.msg });
+      });
   };
 
   deleteComment = comment_id => {
-    api.removeComment(comment_id).then(() => {
-      this.setState(prevState => ({
-        successfulDeleteCount: prevState.successfulDeleteCount + 1
-      }));
-    });
+    api
+      .removeComment(comment_id)
+      .then(() => {
+        this.setState(prevState => ({
+          successfulDeleteCount: prevState.successfulDeleteCount + 1
+        }));
+      })
+      .catch(err => {
+        this.setState({ err: err.response.data.msg });
+      });
   };
 
   render() {
-    const { comments, isLoading } = this.state;
+    const { comments, isLoading, err } = this.state;
+    if (err) return <ErrDisplayer err={err} />;
     if (isLoading) return <Loader />;
+
     return (
       <main>
         {comments.map(comment => {
