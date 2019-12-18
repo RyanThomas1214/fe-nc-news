@@ -78,7 +78,7 @@ class ArticleList extends Component {
             <option value="comment_count">Most Comments</option>
             <option value="votes">Most Votes</option>
           </Select>
-          <Button>SORT!</Button>
+          <Button>SORT</Button>
         </form>
         {articles.map(article => {
           return <ArticleCard key={article.article_id} {...article} />;

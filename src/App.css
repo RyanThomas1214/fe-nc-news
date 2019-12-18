@@ -1,6 +1,6 @@
 .App {
   text-align: center;
-
+  min-height: 1000px;
   padding: 10px;
   background-color: #0e1e24;
   color: white;
@@ -9,16 +9,19 @@
 .Header {
   background-color: #0e1e24;
   color: white;
+  min-width: 315px;
 }
 
 .Topics {
   text-align: center;
+  min-width: 315px;
 }
 
 .Sort {
   grid-column-start: 3;
   grid-column-end: 4;
   text-align: right;
+  min-width: 315px;
 }
 
 .ArticleList {
@@ -33,12 +36,12 @@
   border-color: red;
   grid-column-start: 2;
   grid-column-end: 4;
-  min-width: 320px;
+  min-width: 315px;
   margin-bottom: 10px;
 }
 
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: black;
   font-weight: bold;
 }

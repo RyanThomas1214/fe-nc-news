@@ -91,7 +91,7 @@ class SingleArticle extends Component {
             onChange={this.handleChange}
             required
           />
-          <button disabled={isClicked}>Post Comment</button>
+          <Button disabled={isClicked}>Post Comment</Button>
         </form>
         <Router>
           <CommentList
