@@ -5,6 +5,16 @@ import CommentList from "./CommentList";
 import { Link, Router } from "@reach/router";
 import Voter from "./Voter";
 import ErrDisplayer from "./ErrDisplayer";
+import styled from "styled-components";
+
+const Button = styled.button`
+  color: red;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid red;
+  border-radius: 3px;
+`;
 
 class SingleArticle extends Component {
   state = {
@@ -71,7 +81,7 @@ class SingleArticle extends Component {
         />
 
         <Link to={`/article/${article.article_id}/comments`}>
-          <p> Comments: {article.comment_count}</p>
+          <Button> Comments: {article.comment_count}</Button>
         </Link>
         <form onSubmit={this.handleSubmit}>
           Comment:
