@@ -24,7 +24,7 @@ const CommentCard = ({
   };
 
   return (
-    <article>
+    <article className="CommentCard">
       <h4>{author}</h4>
       <p>{body}</p>
       <Voter votes={votes} section="comments" section_id={comment_id} />

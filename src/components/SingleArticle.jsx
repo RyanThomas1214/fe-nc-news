@@ -87,10 +87,6 @@ class SingleArticle extends Component {
           section_id={article.article_id}
           votes={article.votes}
         />
-
-        <Link to={`/article/${article.article_id}/comments`}>
-          <Button> Comments: {article.comment_count}</Button>
-        </Link>
         <form onSubmit={this.handleSubmit}>
           Comment:
           <StyledBox>
@@ -104,6 +100,11 @@ class SingleArticle extends Component {
           </StyledBox>
           <Button disabled={isClicked}>Post Comment</Button>
         </form>
+
+        <Link to={`/article/${article.article_id}/comments`}>
+          <Button>See All Comments ({article.comment_count})</Button>
+        </Link>
+
         <Router>
           <CommentList
             username={this.props.username}

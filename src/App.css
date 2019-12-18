@@ -40,6 +40,12 @@
   margin-bottom: 10px;
 }
 
+.CommentCard {
+  border: solid;
+  border-color: red;
+  margin-bottom: 10px;
+}
+
 a {
   text-decoration: underline;
   color: black;
