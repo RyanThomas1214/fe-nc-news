@@ -11,17 +11,17 @@ const StyledInput = styled.input``;
 
 const StyledBox = styled.div`
   ${StyledInput}:focus & {
-    border: 5px solid red;
+    border: 5px solid #7a2aeb;
   }
 `;
 
 const Button = styled.button`
-  color: red;
+  color: #7a2aeb;
   font-size: 1em;
   margin: 1em;
   padding: 0.25em 1em;
-  border: 2px solid red;
-  border-radius: 3px;
+  border: 2px solid #7a2aeb;
+  border-radius: 10px;
 `;
 
 class SingleArticle extends Component {

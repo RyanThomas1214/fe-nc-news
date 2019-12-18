@@ -6,11 +6,11 @@ import * as api from "../utils/api";
 import styled from "styled-components";
 
 const Button = styled.button`
-  color: red;
+  color: #7a2aeb;
   font-size: 1em;
   margin-bottom: 0.5em;
   padding: 0.25em 1em;
-  border: 2px solid red;
+  border: 2px solid #7a2aeb;
   border-radius: 3px;
 `;
 
@@ -18,7 +18,7 @@ const Select = styled.select`
   font-size: 1em;
   margin-bottom: 0.5em;
   padding: 0.25em 1em;
-  border: 2px solid red;
+  border: 2px solid #7a2aeb;
   border-radius: 3px;
 `;
 

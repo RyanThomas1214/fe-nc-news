@@ -33,7 +33,7 @@
   background-color: lightgrey;
   color: black;
   border: solid;
-  border-color: red;
+  border-color: #7a2aeb;
   border-radius: 10px;
   grid-column-start: 2;
   grid-column-end: 4;
@@ -43,7 +43,9 @@
 
 .CommentCard {
   border: solid;
-  border-color: red;
+  background-color: lightgrey;
+  color: black;
+  border-color: #7a2aeb;
   margin-bottom: 10px;
   min-width: 315px;
   border-radius: 10px;

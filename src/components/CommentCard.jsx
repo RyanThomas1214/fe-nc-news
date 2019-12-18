@@ -3,11 +3,11 @@ import Voter from "./Voter";
 import styled from "styled-components";
 
 const Button = styled.button`
-  color: red;
+  color: #7a2aeb;
   font-size: 1em;
   margin-bottom: 0.5em;
   padding: 0.25em;
-  border: 2px solid red;
+  border: 2px solid #7a2aeb;
   border-radius: 3px;
 `;
 
