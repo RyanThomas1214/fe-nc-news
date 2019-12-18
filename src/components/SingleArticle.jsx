@@ -7,6 +7,14 @@ import Voter from "./Voter";
 import ErrDisplayer from "./ErrDisplayer";
 import styled from "styled-components";
 
+const StyledInput = styled.input``;
+
+const StyledBox = styled.div`
+  ${StyledInput}:focus & {
+    border: 5px solid red;
+  }
+`;
+
 const Button = styled.button`
   color: red;
   font-size: 1em;
@@ -85,12 +93,15 @@ class SingleArticle extends Component {
         </Link>
         <form onSubmit={this.handleSubmit}>
           Comment:
-          <input
-            type="text"
-            value={this.state.comment.body}
-            onChange={this.handleChange}
-            required
-          />
+          <StyledBox>
+            <StyledInput
+              size="30"
+              type="text"
+              value={this.state.comment.body}
+              onChange={this.handleChange}
+              required
+            />
+          </StyledBox>
           <Button disabled={isClicked}>Post Comment</Button>
         </form>
         <Router>
