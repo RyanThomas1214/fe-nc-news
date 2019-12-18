@@ -44,6 +44,7 @@
   border: solid;
   border-color: red;
   margin-bottom: 10px;
+  min-width: 315px;
 }
 
 a {

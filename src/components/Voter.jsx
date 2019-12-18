@@ -9,6 +9,10 @@ const Button = styled.button`
   padding: 0.25em 1em;
   border: 2px solid red;
   border-radius: 3px;
+  :disabled {
+    background-color: red;
+    color: #dddddd;
+  }
 `;
 
 class Voter extends Component {

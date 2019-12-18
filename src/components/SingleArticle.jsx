@@ -78,7 +78,7 @@ class SingleArticle extends Component {
     if (isLoading) return <Loader />;
 
     return (
-      <main>
+      <main className="SingleArticle">
         <h2>{article.title}</h2>
         <h3>Written by: {article.author}</h3>
         <h5>{article.body}</h5>
