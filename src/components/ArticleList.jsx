@@ -3,6 +3,24 @@ import ArticleCard from "./ArticleCard";
 import Loader from "./Loader";
 import ErrDisplayer from "./ErrDisplayer";
 import * as api from "../utils/api";
+import styled from "styled-components";
+
+const Button = styled.button`
+  color: red;
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  padding: 0.25em 1em;
+  border: 2px solid red;
+  border-radius: 3px;
+`;
+
+const Select = styled.select`
+  font-size: 1em;
+  margin-bottom: 0.5em;
+  padding: 0.25em 1em;
+  border: 2px solid red;
+  border-radius: 3px;
+`;
 
 class ArticleList extends Component {
   state = {
@@ -53,14 +71,14 @@ class ArticleList extends Component {
     if (isLoading) return <Loader />;
 
     return (
-      <main>
-        <form onSubmit={this.handleSubmit}>
-          <select name="sort" onChange={this.handleChange}>
+      <main className="ArticleList">
+        <form onSubmit={this.handleSubmit} className="Sort">
+          <Select name="sort" onChange={this.handleChange}>
             <option value="created_at">Newest</option>
             <option value="comment_count">Most Comments</option>
             <option value="votes">Most Votes</option>
-          </select>
-          <button>SORT!</button>
+          </Select>
+          <Button>SORT!</Button>
         </form>
         {articles.map(article => {
           return <ArticleCard key={article.article_id} {...article} />;

@@ -11,7 +11,7 @@ const ArticleCard = ({
   article_id
 }) => {
   return (
-    <article>
+    <article className="ArticleCard">
       <Link to={`/article/${article_id}`}>
         <h3>{title}</h3>
       </Link>

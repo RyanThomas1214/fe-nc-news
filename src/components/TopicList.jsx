@@ -3,6 +3,16 @@ import * as api from "../utils/api";
 import { Link } from "@reach/router";
 import Loader from "./Loader";
 import ErrDisplayer from "./ErrDisplayer";
+import styled from "styled-components";
+
+const Button = styled.button`
+  color: red;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid red;
+  border-radius: 3px;
+`;
 
 class TopicList extends Component {
   state = {
@@ -30,11 +40,11 @@ class TopicList extends Component {
     if (err) return <ErrDisplayer err={err} />;
     if (isLoading) return <Loader />;
     return (
-      <main>
+      <main className="Topics">
         {topics.map(topic => {
           return (
             <Link to={`/articles/${topic.slug}`} key={topic.slug}>
-              <button>{topic.slug}</button>
+              <Button>{topic.slug}</Button>
             </Link>
           );
         })}

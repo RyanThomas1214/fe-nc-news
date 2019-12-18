@@ -1,5 +1,15 @@
 import React, { Component } from "react";
 import * as api from "../utils/api";
+import styled from "styled-components";
+
+const Button = styled.button`
+  color: red;
+  font-size: 1em;
+  margin: 1em;
+  padding: 0.25em 1em;
+  border: 2px solid red;
+  border-radius: 3px;
+`;
 
 class Voter extends Component {
   state = {
@@ -18,13 +28,13 @@ class Voter extends Component {
     const { newVotes } = this.state;
     return (
       <div>
-        <button onClick={this.handleClick} name="1" disabled={newVotes > 0}>
+        <Button onClick={this.handleClick} name="1" disabled={newVotes > 0}>
           ▲
-        </button>
+        </Button>
         {this.props.votes + newVotes}
-        <button onClick={this.handleClick} name="-1" disabled={newVotes < 0}>
+        <Button onClick={this.handleClick} name="-1" disabled={newVotes < 0}>
           ▼
-        </button>
+        </Button>
       </div>
     );
   }
