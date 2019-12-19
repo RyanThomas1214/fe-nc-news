@@ -21,6 +21,7 @@
   grid-column-start: 3;
   grid-column-end: 4;
   text-align: right;
+  margin-top: 5px;
   min-width: 315px;
 }
 

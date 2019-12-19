@@ -31,7 +31,8 @@ class SingleArticle extends Component {
     isLoading: true,
     successfulPost: {},
     err: "",
-    isClicked: false
+    isClicked: false,
+    showingComments: false
   };
 
   componentDidMount() {
@@ -72,6 +73,12 @@ class SingleArticle extends Component {
     });
   };
 
+  showHideComments = () => {
+    this.setState(prevState => ({
+      showingComments: !prevState.showingComments
+    }));
+  };
+
   render() {
     const { article, isLoading, err, isClicked } = this.state;
     if (err) return <ErrDisplayer err={err} />;
@@ -102,15 +109,21 @@ class SingleArticle extends Component {
         </form>
 
         <Link to={`/article/${article.article_id}/comments`}>
-          <Button>See All Comments ({article.comment_count})</Button>
+          <Button onClick={this.showHideComments}>
+            {this.state.showingComments
+              ? `Hide all Comments (${article.comment_count})`
+              : `Show all Comments (${article.comment_count})`}
+          </Button>
         </Link>
 
         <Router>
-          <CommentList
-            username={this.props.username}
-            path="comments"
-            successfulPost={this.state.successfulPost}
-          />
+          {this.state.showingComments && (
+            <CommentList
+              username={this.props.username}
+              path="comments"
+              successfulPost={this.state.successfulPost}
+            />
+          )}
         </Router>
       </main>
     );
