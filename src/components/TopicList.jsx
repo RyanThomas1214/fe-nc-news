@@ -17,18 +17,14 @@ const Button = styled.button`
     background-color: #7a2aeb;
     border: 2px solid #dddddd;
   }
-  :active {
-    color: #dddddd;
-    background-color: #7a2aeb;
-    border: 2px solid #dddddd;
-  }
 `;
 
 class TopicList extends Component {
   state = {
     topics: [],
     isLoading: true,
-    err: ""
+    err: "",
+    isActive: { coding: false, football: false, cooking: false }
   };
   componentDidMount() {
     this.getAllTopics();
@@ -45,8 +41,17 @@ class TopicList extends Component {
       });
   };
 
+  toggleActive = event => {
+    event.persist();
+    this.setState(prevState => ({
+      isActive: {
+        [event.target.name]: !prevState[event.target.name]
+      }
+    }));
+  };
+
   render() {
-    const { topics, isLoading, err } = this.state;
+    const { topics, isLoading, err, isActive } = this.state;
     if (err) return <ErrDisplayer err={err} />;
     if (isLoading) return <Loader />;
     return (
@@ -54,7 +59,13 @@ class TopicList extends Component {
         {topics.map(topic => {
           return (
             <Link to={`/articles/${topic.slug}`} key={topic.slug}>
-              <Button>{topic.slug.toUpperCase()}</Button>
+              <Button
+                onClick={this.toggleActive}
+                className={isActive[topic.slug] ? topic.slug : ""}
+                name={topic.slug}
+              >
+                {topic.slug.toUpperCase()}
+              </Button>
             </Link>
           );
         })}

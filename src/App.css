@@ -1,7 +1,6 @@
 .App {
   text-align: center;
   min-height: 1000px;
-  padding: 10px;
   background-color: white;
   color: black;
 }
@@ -21,7 +20,7 @@
   grid-column-start: 3;
   grid-column-end: 4;
   text-align: right;
-  margin-top: 5px;
+  margin-top: 8px;
   min-width: 315px;
 }
 
@@ -56,4 +55,22 @@ a {
   text-decoration: underline;
   color: black;
   font-weight: bold;
+}
+
+.coding {
+  color: #dddddd;
+  background-color: #7a2aeb;
+  border: 2px solid #dddddd;
+}
+
+.football {
+  color: #dddddd;
+  background-color: #7a2aeb;
+  border: 2px solid #dddddd;
+}
+
+.cooking {
+  color: #dddddd;
+  background-color: #7a2aeb;
+  border: 2px solid #dddddd;
 }
