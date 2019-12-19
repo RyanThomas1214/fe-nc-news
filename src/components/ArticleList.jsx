@@ -12,7 +12,7 @@ const Button = styled.button`
   padding: 0.25em 1em;
   border: 2px solid #7a2aeb;
   height: 29px;
-  border-radius: 3px;
+  border-radius: 10px;
   :hover {
     color: #dddddd;
     background-color: #7a2aeb;
@@ -25,7 +25,7 @@ const Select = styled.select`
   margin-bottom: 0.5em;
   padding: 0.25em 1em;
   border: 2px solid #7a2aeb;
-  border-radius: 3px;
+  border-radius: 10px;
 `;
 
 class ArticleList extends Component {
