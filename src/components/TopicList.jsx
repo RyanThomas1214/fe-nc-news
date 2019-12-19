@@ -7,11 +7,21 @@ import styled from "styled-components";
 
 const Button = styled.button`
   color: #7a2aeb;
-  font-size: 1em;
+  font-size: 0.9em;
   margin: 0.5em;
-  padding: 0.25em 1em;
+  padding: 0.25em 0.5em;
   border: 2px solid #7a2aeb;
   border-radius: 3px;
+  :hover {
+    color: #dddddd;
+    background-color: #7a2aeb;
+    border: 2px solid #dddddd;
+  }
+  :active {
+    color: #dddddd;
+    background-color: #7a2aeb;
+    border: 2px solid #dddddd;
+  }
 `;
 
 class TopicList extends Component {
@@ -44,7 +54,7 @@ class TopicList extends Component {
         {topics.map(topic => {
           return (
             <Link to={`/articles/${topic.slug}`} key={topic.slug}>
-              <Button>{topic.slug}</Button>
+              <Button>{topic.slug.toUpperCase()}</Button>
             </Link>
           );
         })}

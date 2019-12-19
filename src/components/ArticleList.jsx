@@ -12,6 +12,11 @@ const Button = styled.button`
   padding: 0.25em 1em;
   border: 2px solid #7a2aeb;
   border-radius: 3px;
+  :hover {
+    color: #dddddd;
+    background-color: #7a2aeb;
+    border: 2px solid #dddddd;
+  }
 `;
 
 const Select = styled.select`
