@@ -43,11 +43,11 @@ class TopicList extends Component {
 
   toggleActive = event => {
     event.persist();
-    this.setState(prevState => ({
+    this.setState({
       isActive: {
-        [event.target.name]: !prevState[event.target.name]
+        [event.target.name]: true
       }
-    }));
+    });
   };
 
   render() {
