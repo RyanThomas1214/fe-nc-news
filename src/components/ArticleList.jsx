@@ -23,6 +23,7 @@ const Button = styled.button`
 const Select = styled.select`
   font-size: 1em;
   margin-bottom: 0.5em;
+  margin-right: 1px;
   padding: 0.25em 1em;
   border: 2px solid #7a2aeb;
   border-radius: 10px;
