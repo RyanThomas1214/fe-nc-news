@@ -11,7 +11,7 @@ const Button = styled.button`
   margin: 0.5em;
   padding: 0.25em 0.5em;
   border: 2px solid #7a2aeb;
-  border-radius: 3px;
+  border-radius: 10px;
   :hover {
     color: #dddddd;
     background-color: #7a2aeb;
