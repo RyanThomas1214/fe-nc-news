@@ -1,68 +1,47 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# NC-News API
 
-## Available Scripts
+This repository is the Frontend of a 'Reddit-like' application called NC-News. This application allows users to post and read articles on various topics as well as posting comments. This application also has a voting system on both the articles and comments.
 
-In the project directory, you can run:
+## Initialisation
 
-### `npm start`
+Clone this repo:
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+```bash
+git clone https://github.com/RyanThomas1214/fe-nc-news.git
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+cd fe-nc-news
+```
 
-### `npm test`
+Once opened, you should install the dev dependencies using the following command:
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```bash
+npm i
+```
 
-### `npm run build`
+## Running locally
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+After initialisation, you can run the repository locally by using the command:
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+```bash
+npm start
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Built With
 
-### `npm run eject`
+- [React](https://reactjs.org/ "React") - A JavaScript library for building user interfaces.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* [Reach Router](https://reach.tech/router "Reach Router") - Routing for React.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* [Axios](https://github.com/axios/axios "Axios") - Promise based HTTP client for node.js.
 
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Authors
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Ryan Thomas**
 
-## Learn More
+GitHub - [RyanThomas1214](https://github.com/RyanThomas1214 "RyanThomas1214")
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Hosted Site
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Hosted using netlify
 
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+[NC-News](https://youthful-bell-236ead.netlify.com/ "NC-News")
