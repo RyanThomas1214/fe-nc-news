@@ -57,7 +57,6 @@ exports.removeComment = comment_id => {
 };
 
 exports.updateVotes = (section, section_id, votes) => {
-  console.log(section, section_id, votes);
   return axios
     .patch(`https://ryans-nc-news.herokuapp.com/api/${section}/${section_id}`, {
       inc_votes: votes
