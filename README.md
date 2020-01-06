@@ -48,4 +48,4 @@ Hosted using netlify
 
 ## Backend Repository
 
-[be-nc-News](https://github.com/RyanThomas1214/be-nc-news "be-nc-News")
+[be-nc-news](https://github.com/RyanThomas1214/be-nc-news "be-nc-news")
